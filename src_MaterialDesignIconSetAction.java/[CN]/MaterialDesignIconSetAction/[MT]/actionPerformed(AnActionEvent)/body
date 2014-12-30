@@ -1,4 +1,0 @@
-{
-  MaterialDesignIconSetDialog dialog=new MaterialDesignIconSetDialog(getEventProject(event));
-  dialog.show();
-}

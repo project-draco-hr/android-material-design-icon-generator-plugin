@@ -1,0 +1,6 @@
+{
+  super(comboBoxList.toArray());
+  this.comboBoxList=comboBoxList;
+  this.setEditable(true);
+  initListener();
+}

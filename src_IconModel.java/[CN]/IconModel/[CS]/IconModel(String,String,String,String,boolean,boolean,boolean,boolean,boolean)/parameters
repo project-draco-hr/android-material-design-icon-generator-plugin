@@ -1,0 +1,9 @@
+String iconName
+String color
+String dp
+String fileName
+boolean mdpi
+boolean hdpi
+boolean xhdpi
+boolean xxhdpi
+boolean xxxhdpi

@@ -1,0 +1,11 @@
+{
+  this.iconName=iconName;
+  this.color=color.toLowerCase();
+  this.dp=dp;
+  this.fileName=fileName;
+  this.mdpi=mdpi;
+  this.hdpi=hdpi;
+  this.xhdpi=xhdpi;
+  this.xxhdpi=xxhdpi;
+  this.xxxhdpi=xxxhdpi;
+}

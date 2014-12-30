@@ -1,0 +1,9 @@
+{
+  textFieldFileName.addActionListener(new ActionListener(){
+    @Override public void actionPerformed(    ActionEvent event){
+      if (model != null)       model.setFileName(textFieldFileName.getText());
+      showIconPreview();
+    }
+  }
+);
+}

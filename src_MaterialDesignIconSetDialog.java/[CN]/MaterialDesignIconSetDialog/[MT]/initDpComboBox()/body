@@ -1,0 +1,9 @@
+{
+  comboBoxDp.addActionListener(new ActionListener(){
+    @Override public void actionPerformed(    ActionEvent event){
+      model.setDp((String)comboBoxDp.getSelectedItem());
+      showIconPreview();
+    }
+  }
+);
+}

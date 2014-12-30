@@ -1,0 +1,10 @@
+{
+  if (model == null)   return;
+  try {
+    String size=checkBoxXxhdpi.getText();
+    ImageIcon icon=new ImageIcon(getClass().getResource(model.getPath(size)));
+    imageLabel.setIcon(icon);
+  }
+ catch (  Exception e) {
+  }
+}

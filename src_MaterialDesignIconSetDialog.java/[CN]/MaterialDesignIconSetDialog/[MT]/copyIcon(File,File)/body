@@ -1,0 +1,11 @@
+{
+  try {
+    new File(copyFile.getParent()).mkdirs();
+    copyFile(originalFile,copyFile);
+    return true;
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+    return false;
+  }
+}

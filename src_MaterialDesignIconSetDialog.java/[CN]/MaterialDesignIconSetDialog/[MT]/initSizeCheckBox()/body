@@ -1,0 +1,32 @@
+{
+  checkBoxMdpi.addItemListener(new ItemListener(){
+    @Override public void itemStateChanged(    ItemEvent event){
+      if (model != null)       model.setMdpi(checkBoxMdpi.isSelected());
+    }
+  }
+);
+  checkBoxHdpi.addItemListener(new ItemListener(){
+    @Override public void itemStateChanged(    ItemEvent event){
+      if (model != null)       model.setHdpi(checkBoxHdpi.isSelected());
+    }
+  }
+);
+  checkBoxXhdpi.addItemListener(new ItemListener(){
+    @Override public void itemStateChanged(    ItemEvent event){
+      if (model != null)       model.setXhdpi(checkBoxXhdpi.isSelected());
+    }
+  }
+);
+  checkBoxXxhdpi.addItemListener(new ItemListener(){
+    @Override public void itemStateChanged(    ItemEvent event){
+      if (model != null)       model.setXxhdpi(checkBoxXxhdpi.isSelected());
+    }
+  }
+);
+  checkBoxXxxhdpi.addItemListener(new ItemListener(){
+    @Override public void itemStateChanged(    ItemEvent event){
+      if (model != null)       model.setXxxhdpi(checkBoxXxxhdpi.isSelected());
+    }
+  }
+);
+}

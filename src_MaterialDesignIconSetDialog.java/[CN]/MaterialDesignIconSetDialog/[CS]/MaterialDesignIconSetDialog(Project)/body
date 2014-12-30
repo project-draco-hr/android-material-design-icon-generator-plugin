@@ -1,0 +1,16 @@
+{
+  super(project,true);
+  this.project=project;
+  setTitle(TITLE);
+  setResizable(true);
+  initIconComboBox();
+  initColorComboBox();
+  initDpComboBox();
+  initFileName();
+  initSizeCheckBox();
+  initLabelLink(labelOverview,URL_OVERVIEW);
+  initLabelLink(labelRepository,URL_REPOSITORY);
+  model=createModel();
+  showIconPreview();
+  init();
+}

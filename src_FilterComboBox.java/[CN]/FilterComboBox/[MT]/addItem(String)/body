@@ -1,0 +1,4 @@
+{
+  super.addItem(text);
+  comboBoxList.add(text);
+}

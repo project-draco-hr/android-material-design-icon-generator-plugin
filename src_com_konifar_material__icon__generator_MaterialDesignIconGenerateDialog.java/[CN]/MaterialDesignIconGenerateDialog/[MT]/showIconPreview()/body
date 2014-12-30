@@ -2,6 +2,7 @@
   if (model == null)   return;
   try {
     String size=checkBoxXxhdpi.getText();
+    System.out.println(model.getPath(size));
     ImageIcon icon=new ImageIcon(getClass().getResource(model.getPath(size)));
     imageLabel.setIcon(icon);
   }

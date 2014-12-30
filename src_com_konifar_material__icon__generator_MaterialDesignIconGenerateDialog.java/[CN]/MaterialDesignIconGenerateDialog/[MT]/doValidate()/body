@@ -1,0 +1,13 @@
+{
+  if (StringUtils.isEmpty(textFieldFileName.getText().trim())) {
+    return new ValidationInfo(ERROR_FILE_NAME_EMPTY,textFieldFileName);
+  }
+  if (!checkBoxMdpi.isSelected() && !checkBoxHdpi.isSelected() && !checkBoxXhdpi.isSelected()&& !checkBoxXxhdpi.isSelected()&& !checkBoxXxxhdpi.isSelected()) {
+    return new ValidationInfo(ERROR_SIZE_CHECK_EMPTY,checkBoxMdpi);
+  }
+  File resourcePath=new File(model.getResourcePath(project));
+  if (!resourcePath.exists() || !resourcePath.isDirectory()) {
+    return new ValidationInfo(ERROR_RESOURCE_DIR_NOTHING,panelMain);
+  }
+  return null;
+}

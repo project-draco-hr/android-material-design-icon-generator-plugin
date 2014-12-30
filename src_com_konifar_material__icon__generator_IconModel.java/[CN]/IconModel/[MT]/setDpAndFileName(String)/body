@@ -1,0 +1,5 @@
+{
+  this.dp=dp;
+  String[] fileString=iconName.split(File.separator);
+  this.fileName=getIconName(fileString[1]);
+}

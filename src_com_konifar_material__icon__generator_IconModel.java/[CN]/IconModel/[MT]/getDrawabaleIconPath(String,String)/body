@@ -5,10 +5,5 @@
   sb.append(size);
   sb.append(File.separator);
   sb.append(fileName);
-  sb.append(UNDERBAR);
-  sb.append(color);
-  sb.append(UNDERBAR);
-  sb.append(dp);
-  sb.append(PNG_SUFFIX);
   return sb.toString();
 }

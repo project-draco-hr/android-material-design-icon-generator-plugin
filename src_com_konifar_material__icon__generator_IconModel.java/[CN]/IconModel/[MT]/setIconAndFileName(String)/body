@@ -1,0 +1,11 @@
+{
+  if (iconName == null) {
+    this.iconName="";
+    this.fileName="";
+  }
+ else {
+    this.iconName=iconName;
+    String[] fileString=this.iconName.split(File.separator);
+    this.fileName=getIconName(fileString[1]);
+  }
+}

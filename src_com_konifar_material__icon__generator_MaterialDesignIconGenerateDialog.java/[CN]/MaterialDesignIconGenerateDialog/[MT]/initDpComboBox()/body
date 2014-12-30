@@ -1,7 +1,8 @@
 {
   comboBoxDp.addActionListener(new ActionListener(){
     @Override public void actionPerformed(    ActionEvent event){
-      model.setDp((String)comboBoxDp.getSelectedItem());
+      model.setDpAndFileName((String)comboBoxDp.getSelectedItem());
+      textFieldFileName.setText(model.getFileName());
       showIconPreview();
     }
   }

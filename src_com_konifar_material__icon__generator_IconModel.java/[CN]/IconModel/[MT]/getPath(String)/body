@@ -6,7 +6,7 @@
     sb.append(PATH_ICONS);
     sb.append(File.separator);
     sb.append(fileString[0]);
-    sb.append(getDrawabaleIconPath(fileString[1],size));
+    sb.append(getDrawabaleIconPath(fileName,size));
     return sb.toString();
   }
  else {

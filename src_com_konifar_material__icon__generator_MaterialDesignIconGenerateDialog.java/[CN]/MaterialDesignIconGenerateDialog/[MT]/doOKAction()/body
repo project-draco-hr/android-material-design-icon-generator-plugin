@@ -18,6 +18,6 @@
     success=true;
   }
   if (success) {
-    JOptionPane.showConfirmDialog(panelMain,"Icon created successfully.","Material design icon created",JOptionPane.OK_OPTION,JOptionPane.INFORMATION_MESSAGE,new ImageIcon(getClass().getResource(ICON_DONE)));
+    JOptionPane.showConfirmDialog(panelMain,"Icon created successfully.","Material design icon created",JOptionPane.OK_OPTION,JOptionPane.PLAIN_MESSAGE);
   }
 }

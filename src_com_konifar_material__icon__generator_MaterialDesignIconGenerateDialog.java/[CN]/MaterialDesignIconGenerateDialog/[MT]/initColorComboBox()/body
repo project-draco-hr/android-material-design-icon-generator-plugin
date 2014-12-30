@@ -1,7 +1,8 @@
 {
   comboBoxColor.addActionListener(new ActionListener(){
     @Override public void actionPerformed(    ActionEvent event){
-      model.setColor((String)comboBoxColor.getSelectedItem());
+      model.setColorAndFileName((String)comboBoxColor.getSelectedItem());
+      textFieldFileName.setText(model.getFileName());
       showIconPreview();
     }
   }

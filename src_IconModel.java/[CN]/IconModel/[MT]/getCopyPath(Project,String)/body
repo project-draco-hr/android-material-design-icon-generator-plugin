@@ -1,7 +1,0 @@
-{
-  StringBuilder sb=new StringBuilder();
-  sb.append(project.getBasePath());
-  sb.append(COPY_DIR);
-  sb.append(getDrawabaleIconPath(fileName,size));
-  return sb.toString();
-}

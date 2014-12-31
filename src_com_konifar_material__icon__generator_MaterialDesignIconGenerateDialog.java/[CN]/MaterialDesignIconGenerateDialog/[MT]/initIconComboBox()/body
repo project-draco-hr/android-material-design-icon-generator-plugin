@@ -1,0 +1,28 @@
+{
+  Document doc;
+  try {
+    File templateFile=new File(getClass().getResource(FILE_ICON_COMBOBOX_XML).getFile());
+    doc=JDOMUtil.loadDocument(templateFile);
+    List<Element> elements=doc.getRootElement().getChildren();
+    for (    org.jdom.Element element : elements) {
+      comboBoxIcon.addItem(element.getText());
+    }
+  }
+ catch (  JDOMException e) {
+    e.printStackTrace();
+  }
+catch (  IOException e) {
+    e.printStackTrace();
+  }
+  comboBoxIcon.addActionListener(new ActionListener(){
+    @Override public void actionPerformed(    ActionEvent event){
+      if (model != null) {
+        model.setIconAndFileName((String)comboBoxIcon.getSelectedItem());
+        textFieldFileName.setText(model.getFileName());
+        showIconPreview();
+      }
+    }
+  }
+);
+  comboBoxIcon.setSelectedIndex(0);
+}

@@ -1,0 +1,36 @@
+{
+  final JTextField textfield=(JTextField)this.getEditor().getEditorComponent();
+  textfield.addKeyListener(new KeyAdapter(){
+    public void keyReleased(    KeyEvent event){
+switch (event.getKeyCode()) {
+case KeyEvent.VK_ENTER:
+case KeyEvent.VK_ESCAPE:
+        requestFocus(false);
+      break;
+case KeyEvent.VK_UP:
+case KeyEvent.VK_DOWN:
+    break;
+default :
+  SwingUtilities.invokeLater(new Runnable(){
+    public void run(){
+      filter(textfield.getText());
+    }
+  }
+);
+}
+}
+}
+);
+getAccessibleContext().addPropertyChangeListener(new PropertyChangeListener(){
+public void propertyChange(PropertyChangeEvent event){
+if (AccessibleContext.ACCESSIBLE_STATE_PROPERTY.equals(event.getPropertyName()) && AccessibleState.FOCUSED.equals(event.getNewValue()) && getAccessibleContext().getAccessibleChild(0) instanceof ComboPopup) {
+ComboPopup popup=(ComboPopup)getAccessibleContext().getAccessibleChild(0);
+JList list=popup.getList();
+if (list.getSelectedValue() != null) {
+  setSelectedItem(String.valueOf(list.getSelectedValue()));
+}
+}
+}
+}
+);
+}

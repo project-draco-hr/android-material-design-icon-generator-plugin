@@ -1,0 +1,20 @@
+{
+  comboBoxColor.addActionListener(new ActionListener(){
+    @Override public void actionPerformed(    ActionEvent event){
+      model.setColorAndFileName((String)comboBoxColor.getSelectedItem());
+      textFieldFileName.setText(model.getFileName());
+      showIconPreview();
+    }
+  }
+);
+  comboBoxColor.getAccessibleContext().addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent event){
+      if (AccessibleContext.ACCESSIBLE_STATE_PROPERTY.equals(event.getPropertyName()) && AccessibleState.FOCUSED.equals(event.getNewValue()) && comboBoxColor.getAccessibleContext().getAccessibleChild(0) instanceof ComboPopup) {
+        ComboPopup popup=(ComboPopup)comboBoxColor.getAccessibleContext().getAccessibleChild(0);
+        JList list=popup.getList();
+        comboBoxColor.setSelectedItem(String.valueOf(list.getSelectedValue()));
+      }
+    }
+  }
+);
+}

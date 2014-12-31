@@ -1,9 +1,0 @@
-{
-  comboBoxColor.addActionListener(new ActionListener(){
-    @Override public void actionPerformed(    ActionEvent event){
-      model.setColor((String)comboBoxColor.getSelectedItem());
-      showIconPreview();
-    }
-  }
-);
-}

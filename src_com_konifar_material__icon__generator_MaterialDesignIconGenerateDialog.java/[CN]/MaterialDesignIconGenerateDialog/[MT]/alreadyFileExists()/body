@@ -1,0 +1,12 @@
+{
+  JCheckBox[] checkBoxes={checkBoxMdpi,checkBoxHdpi,checkBoxXhdpi,checkBoxXxhdpi,checkBoxXxxhdpi};
+  for (  JCheckBox checkBox : checkBoxes) {
+    if (checkBox.isSelected()) {
+      File copyFile=new File(model.getCopyPath(project,checkBox.getText()));
+      if (copyFile.exists() && copyFile.isFile()) {
+        return true;
+      }
+    }
+  }
+  return false;
+}

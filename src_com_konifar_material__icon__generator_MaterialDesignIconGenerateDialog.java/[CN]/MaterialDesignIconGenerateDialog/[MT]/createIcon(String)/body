@@ -1,25 +1,6 @@
 {
-  if (canceled)   return false;
   File copyFile=new File(model.getCopyPath(project,size));
-  if (copyFile.exists() && copyFile.isFile()) {
-    int option=JOptionPane.showConfirmDialog(panelMain,copyFile.getName() + " already exists, overwrite ?","File exists",JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
-switch (option) {
-case JOptionPane.YES_OPTION:
-      String path=model.getPath(size);
-    String originalFile=getClass().getResource(path).getFile();
+  String path=model.getPath(size);
+  String originalFile=getClass().getResource(path).getFile();
   return copyIcon(copyFile,new File(originalFile));
-case JOptionPane.NO_OPTION:
-return false;
-case JOptionPane.CANCEL_OPTION:
-canceled=true;
-return false;
-default :
-return false;
-}
-}
- else {
-String path=model.getPath(size);
-String originalFile=getClass().getResource(path).getFile();
-return copyIcon(copyFile,new File(originalFile));
-}
 }

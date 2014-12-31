@@ -1,0 +1,8 @@
+{
+  if (model.isMdpi() && createIcon(checkBoxMdpi.getText()))   ;
+  if (model.isHdpi() && createIcon(checkBoxHdpi.getText()))   ;
+  if (model.isXhdpi() && createIcon(checkBoxXhdpi.getText()))   ;
+  if (model.isXxhdpi() && createIcon(checkBoxXxhdpi.getText()))   ;
+  if (model.isXxxhdpi() && createIcon(checkBoxXxxhdpi.getText()))   ;
+  JOptionPane.showConfirmDialog(panelMain,"Icon created successfully.","Material design icon created",JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
+}

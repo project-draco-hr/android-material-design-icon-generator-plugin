@@ -1,8 +1,16 @@
 {
-  textFieldFileName.addActionListener(new ActionListener(){
-    @Override public void actionPerformed(    ActionEvent event){
+  textFieldFileName.getDocument().addDocumentListener(new DocumentListener(){
+    @Override public void insertUpdate(    DocumentEvent event){
+      setText();
+    }
+    @Override public void removeUpdate(    DocumentEvent event){
+      setText();
+    }
+    @Override public void changedUpdate(    DocumentEvent event){
+      setText();
+    }
+    private void setText(){
       if (model != null)       model.setFileName(textFieldFileName.getText());
-      showIconPreview();
     }
   }
 );

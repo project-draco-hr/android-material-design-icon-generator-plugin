@@ -1,6 +1,10 @@
 {
   StringBuilder sb=new StringBuilder();
   sb.append(getResourcePath(project));
-  sb.append(getDrawabaleIconPath(fileName,size));
+  sb.append(File.separator);
+  sb.append(PATH_DRAWABLE_PREFIX);
+  sb.append(size);
+  sb.append(File.separator);
+  sb.append(fileName);
   return sb.toString();
 }

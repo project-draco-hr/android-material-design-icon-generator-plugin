@@ -1,6 +1,8 @@
 {
+  System.out.println(model.getCopyPath(project,size));
   File copyFile=new File(model.getCopyPath(project,size));
   String path=model.getPath(size);
+  System.out.println(path);
   String originalFile=getClass().getResource(path).getFile();
   return copyIcon(copyFile,new File(originalFile));
 }

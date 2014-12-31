@@ -1,4 +1,7 @@
 {
+  if (StringUtils.isEmpty(comboBoxIcon.getInputText().trim())) {
+    return new ValidationInfo(ERROR_ICON_NOT_SELECTED,comboBoxIcon);
+  }
   if (StringUtils.isEmpty(textFieldFileName.getText().trim())) {
     return new ValidationInfo(ERROR_FILE_NAME_EMPTY,textFieldFileName);
   }

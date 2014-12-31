@@ -1,21 +1,15 @@
 {
-  InputStream in=new FileInputStream(srcFile);
+  InputStream is=getClass().getResourceAsStream(originalPath);
   OutputStream os=new FileOutputStream(destFile);
   int len=-1;
   byte[] b=new byte[1000 * 1024];
   try {
-    while ((len=in.read(b,0,b.length)) != -1) {
+    while ((len=is.read(b,0,b.length)) != -1) {
       os.write(b,0,len);
     }
     os.flush();
   }
   finally {
-    if (in != null)     try {
-      in.close();
-    }
- catch (    IOException e) {
-      e.printStackTrace();
-    }
     if (os != null)     try {
       os.close();
     }

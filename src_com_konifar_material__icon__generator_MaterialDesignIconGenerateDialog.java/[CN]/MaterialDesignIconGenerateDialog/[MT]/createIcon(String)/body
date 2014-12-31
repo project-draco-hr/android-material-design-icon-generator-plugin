@@ -1,8 +1,13 @@
 {
-  System.out.println(model.getCopyPath(project,size));
   File copyFile=new File(model.getCopyPath(project,size));
-  String path=model.getPath(size);
-  System.out.println(path);
-  String originalFile=getClass().getResource(path).getFile();
-  return copyIcon(copyFile,new File(originalFile));
+  String path=model.getLocalPath(size);
+  try {
+    new File(copyFile.getParent()).mkdirs();
+    copyFile(path,copyFile);
+    return true;
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+    throw new IllegalStateException(e);
+  }
 }

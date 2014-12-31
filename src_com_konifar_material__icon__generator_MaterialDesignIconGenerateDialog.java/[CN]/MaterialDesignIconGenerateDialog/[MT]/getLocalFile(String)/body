@@ -2,7 +2,7 @@
   InputStream is=null;
   OutputStream os=null;
   try {
-    is=getClass().getResourceAsStream(FILE_ICON_COMBOBOX_XML);
+    is=getClass().getResourceAsStream(fileName);
     File targetFile=new File(fileName);
     os=new FileOutputStream(targetFile);
     byte[] buffer=new byte[8 * 1024];

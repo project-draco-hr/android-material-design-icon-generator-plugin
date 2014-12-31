@@ -1,7 +1,7 @@
 {
   Document doc;
   try {
-    File templateFile=new File(getClass().getResource(FILE_ICON_COMBOBOX_XML).getFile());
+    File templateFile=getLocalFile(FILE_ICON_COMBOBOX_XML);
     doc=JDOMUtil.loadDocument(templateFile);
     List<Element> elements=doc.getRootElement().getChildren();
     for (    org.jdom.Element element : elements) {

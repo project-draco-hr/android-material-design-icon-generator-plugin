@@ -10,21 +10,17 @@
     os.flush();
   }
   finally {
-    if (in != null) {
-      try {
-        in.close();
-      }
- catch (      IOException e) {
-        e.printStackTrace();
-      }
+    if (in != null)     try {
+      in.close();
     }
-    if (os != null) {
-      try {
-        os.close();
-      }
- catch (      IOException e) {
-        e.printStackTrace();
-      }
+ catch (    IOException e) {
+      e.printStackTrace();
+    }
+    if (os != null)     try {
+      os.close();
+    }
+ catch (    IOException e) {
+      e.printStackTrace();
     }
   }
 }

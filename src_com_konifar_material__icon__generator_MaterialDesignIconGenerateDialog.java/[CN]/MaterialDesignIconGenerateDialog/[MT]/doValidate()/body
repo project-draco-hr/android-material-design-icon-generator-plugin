@@ -10,7 +10,7 @@
   }
   File resourcePath=new File(model.getResourcePath(project));
   if (!resourcePath.exists() || !resourcePath.isDirectory()) {
-    return new ValidationInfo(ERROR_RESOURCE_DIR_NOTHING,panelMain);
+    return new ValidationInfo(ERROR_RESOURCE_DIR_NOTHING_PREFIX + resourcePath,panelMain);
   }
   return null;
 }

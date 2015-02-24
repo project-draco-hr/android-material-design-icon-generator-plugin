@@ -3,6 +3,7 @@
   this.color=color.toLowerCase();
   this.dp=dp;
   this.fileName=fileName;
+  this.resDir=resDir;
   this.mdpi=mdpi;
   this.hdpi=hdpi;
   this.xhdpi=xhdpi;

@@ -7,6 +7,7 @@
   initColorComboBox();
   initDpComboBox();
   initFileName();
+  initResDirectoryName();
   initSizeCheckBox();
   initLabelLink(labelOverview,URL_OVERVIEW);
   initLabelLink(labelRepository,URL_REPOSITORY);

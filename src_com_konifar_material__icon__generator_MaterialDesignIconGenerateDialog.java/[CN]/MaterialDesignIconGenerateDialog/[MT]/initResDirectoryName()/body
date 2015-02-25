@@ -1,0 +1,19 @@
+{
+  resDirectoryName.setText(DEFAULT_RES_DIR);
+  resDirectoryName.addBrowseFolderListener(new TextBrowseFolderListener(new FileChooserDescriptor(false,true,false,false,false,false),project));
+  resDirectoryName.getTextField().getDocument().addDocumentListener(new DocumentListener(){
+    @Override public void insertUpdate(    DocumentEvent event){
+      setText();
+    }
+    @Override public void removeUpdate(    DocumentEvent event){
+      setText();
+    }
+    @Override public void changedUpdate(    DocumentEvent event){
+      setText();
+    }
+    private void setText(){
+      if (model != null)       model.setResDir(resDirectoryName.getText());
+    }
+  }
+);
+}

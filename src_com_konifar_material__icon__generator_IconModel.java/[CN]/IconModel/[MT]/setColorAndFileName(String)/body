@@ -1,5 +1,0 @@
-{
-  this.color=color.toLowerCase();
-  String[] fileString=iconName.split(File.separator);
-  if (fileString.length > 1)   this.fileName=getIconName(fileString[1]);
-}

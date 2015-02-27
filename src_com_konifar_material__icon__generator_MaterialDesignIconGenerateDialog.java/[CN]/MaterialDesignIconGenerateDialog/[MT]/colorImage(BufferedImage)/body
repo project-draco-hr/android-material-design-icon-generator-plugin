@@ -1,0 +1,26 @@
+{
+  Color color=null;
+  if (model.getCustomColor() != null) {
+    String colorString=model.getCustomColor();
+    color=Color.decode(colorString);
+  }
+  if (color == null) {
+    return image;
+  }
+  int width=image.getWidth();
+  int height=image.getHeight();
+  BufferedImage newImage=new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
+  WritableRaster raster=newImage.getRaster();
+  for (int xx=0; xx < width; xx++) {
+    for (int yy=0; yy < height; yy++) {
+      Color originalColor=new Color(image.getRGB(xx,yy),true);
+      int[] pixels=new int[4];
+      pixels[0]=color.getRed();
+      pixels[1]=color.getGreen();
+      pixels[2]=color.getBlue();
+      pixels[3]=originalColor.getAlpha();
+      raster.setPixel(xx,yy,pixels);
+    }
+  }
+  return newImage;
+}

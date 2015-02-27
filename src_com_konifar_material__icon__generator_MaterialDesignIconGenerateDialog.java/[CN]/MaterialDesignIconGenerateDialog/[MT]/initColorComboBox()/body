@@ -1,9 +1,27 @@
 {
+  Document doc;
+  try {
+    File templateFile=getLocalFile(COLOR_PALETTE_COMBOBOX_XML);
+    doc=JDOMUtil.loadDocument(templateFile);
+    List<Element> elements=doc.getRootElement().getChildren();
+    comboBoxColor.removeAllItems();
+    comboBoxColor.addItem(" ");
+    for (    org.jdom.Element element : elements) {
+      String key=element.getAttributeValue("id");
+      paletteMap.put(key,element.getText());
+      comboBoxColor.addItem(key);
+    }
+  }
+ catch (  JDOMException e) {
+    e.printStackTrace();
+  }
+catch (  IOException e) {
+    e.printStackTrace();
+  }
   comboBoxColor.addActionListener(new ActionListener(){
     @Override public void actionPerformed(    ActionEvent event){
-      model.setColorAndFileName((String)comboBoxColor.getSelectedItem());
-      textFieldFileName.setText(model.getFileName());
-      showIconPreview();
+      String value=paletteMap.get((String)comboBoxColor.getSelectedItem());
+      textFieldCustomColor.setText(value);
     }
   }
 );
@@ -17,4 +35,5 @@
     }
   }
 );
+  comboBoxColor.setSelectedIndex(0);
 }

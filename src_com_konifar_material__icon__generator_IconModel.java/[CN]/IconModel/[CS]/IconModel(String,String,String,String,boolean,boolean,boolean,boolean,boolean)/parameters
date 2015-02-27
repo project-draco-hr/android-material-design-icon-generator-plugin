@@ -1,5 +1,4 @@
 String iconName
-String color
 String dp
 String fileName
 String resDir

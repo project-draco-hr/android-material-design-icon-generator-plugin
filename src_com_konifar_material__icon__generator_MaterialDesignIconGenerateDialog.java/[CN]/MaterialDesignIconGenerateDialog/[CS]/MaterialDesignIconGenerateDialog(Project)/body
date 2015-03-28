@@ -1,6 +1,7 @@
 {
   super(project,true);
   this.project=project;
+  paletteMap=new HashMap<String,String>();
   setTitle(TITLE);
   setResizable(true);
   initIconComboBox();
@@ -9,6 +10,7 @@
   initFileName();
   initResDirectoryName();
   initSizeCheckBox();
+  initFileCustomColor();
   initLabelLink(labelOverview,URL_OVERVIEW);
   initLabelLink(labelRepository,URL_REPOSITORY);
   model=createModel();

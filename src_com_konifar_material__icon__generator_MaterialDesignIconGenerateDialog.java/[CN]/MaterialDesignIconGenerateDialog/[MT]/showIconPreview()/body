@@ -2,7 +2,9 @@
   if (model == null)   return;
   try {
     String size=checkBoxXxhdpi.getText();
-    ImageIcon icon=new ImageIcon(getClass().getResource(PACKAGE + model.getLocalPath(size)));
+    InputStream is=getClass().getResourceAsStream(PACKAGE + model.getLocalPath(size));
+    BufferedImage img=colorImage(ImageIO.read(is));
+    ImageIcon icon=new ImageIcon(img);
     imageLabel.setIcon(icon);
   }
  catch (  Exception e) {

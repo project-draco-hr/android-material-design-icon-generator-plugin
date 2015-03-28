@@ -1,0 +1,34 @@
+{
+  textFieldCustomColor.getDocument().addDocumentListener(new DocumentListener(){
+    @Override public void insertUpdate(    DocumentEvent event){
+      setText();
+    }
+    @Override public void removeUpdate(    DocumentEvent event){
+      setText();
+    }
+    @Override public void changedUpdate(    DocumentEvent event){
+      setText();
+    }
+    private void setText(){
+      if (model != null) {
+        if (StringUtils.isEmpty(textFieldCustomColor.getText())) {
+          model.setCustomColor(null);
+          showIconPreview();
+          comboBoxColor.setSelectedItem("");
+          return;
+        }
+        try {
+          Color.decode(textFieldCustomColor.getText());
+          model.setCustomColor(textFieldCustomColor.getText());
+          showIconPreview();
+        }
+ catch (        NumberFormatException e) {
+          model.setCustomColor(null);
+          comboBoxColor.setSelectedItem("");
+          showIconPreview();
+        }
+      }
+    }
+  }
+);
+}

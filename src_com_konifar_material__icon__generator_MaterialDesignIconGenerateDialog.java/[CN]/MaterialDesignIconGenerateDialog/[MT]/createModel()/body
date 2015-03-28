@@ -1,6 +1,5 @@
 {
   final String iconName=(String)comboBoxIcon.getSelectedItem();
-  final String color=(String)comboBoxColor.getSelectedItem();
   final String dp=(String)comboBoxDp.getSelectedItem();
   final String fileName=textFieldFileName.getText();
   final String resDir=resDirectoryName.getText();
@@ -9,5 +8,5 @@
   final boolean xdpi=checkBoxXhdpi.isSelected();
   final boolean xxdpi=checkBoxXxhdpi.isSelected();
   final boolean xxxdpi=checkBoxXxxhdpi.isSelected();
-  return new IconModel(iconName,color,dp,fileName,resDir,mdpi,hdpi,xdpi,xxdpi,xxxdpi);
+  return new IconModel(iconName,dp,fileName,resDir,mdpi,hdpi,xdpi,xxdpi,xxxdpi);
 }

@@ -1,7 +1,6 @@
 {
   super(project,true);
   this.project=project;
-  paletteMap=new HashMap<String,String>();
   setTitle(TITLE);
   setResizable(true);
   initIconComboBox();

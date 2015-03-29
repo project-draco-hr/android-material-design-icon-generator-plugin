@@ -1,12 +1,10 @@
 {
   Color color=null;
-  if (model.getCustomColor() != null) {
-    String colorString=model.getCustomColor();
+  if (model.getColorCode() != null) {
+    String colorString=model.getColorCode();
     color=Color.decode(colorString);
   }
-  if (color == null) {
-    return image;
-  }
+  if (color == null)   return image;
   int width=image.getWidth();
   int height=image.getHeight();
   BufferedImage newImage=new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);

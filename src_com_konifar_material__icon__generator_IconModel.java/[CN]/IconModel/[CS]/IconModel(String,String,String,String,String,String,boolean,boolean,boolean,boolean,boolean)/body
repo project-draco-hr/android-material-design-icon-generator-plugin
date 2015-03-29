@@ -1,6 +1,7 @@
 {
   this.iconName=iconName;
-  this.color="white";
+  this.displayColorName=displayColorName;
+  this.colorCode=colorCode;
   this.dp=dp;
   this.fileName=fileName;
   this.resDir=resDir;

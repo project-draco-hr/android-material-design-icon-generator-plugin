@@ -1,14 +1,13 @@
 {
+  colorPaletteMap=new HashMap<String,String>();
   Document doc;
   try {
     File templateFile=getLocalFile(COLOR_PALETTE_COMBOBOX_XML);
     doc=JDOMUtil.loadDocument(templateFile);
     List<Element> elements=doc.getRootElement().getChildren();
-    comboBoxColor.removeAllItems();
-    comboBoxColor.addItem(" ");
     for (    org.jdom.Element element : elements) {
       String key=element.getAttributeValue("id");
-      paletteMap.put(key,element.getText());
+      colorPaletteMap.put(key,element.getText());
       comboBoxColor.addItem(key);
     }
   }
@@ -20,8 +19,12 @@ catch (  IOException e) {
   }
   comboBoxColor.addActionListener(new ActionListener(){
     @Override public void actionPerformed(    ActionEvent event){
-      String value=paletteMap.get((String)comboBoxColor.getSelectedItem());
-      textFieldCustomColor.setText(value);
+      if (model != null) {
+        model.setDisplayColorName((String)comboBoxColor.getSelectedItem());
+        String value=colorPaletteMap.get((String)comboBoxColor.getSelectedItem());
+        textFieldColorCode.setText(value);
+        textFieldFileName.setText(model.getFileName());
+      }
     }
   }
 );
@@ -36,4 +39,6 @@ catch (  IOException e) {
   }
 );
   comboBoxColor.setSelectedIndex(0);
+  String value=colorPaletteMap.get((String)comboBoxColor.getSelectedItem());
+  textFieldColorCode.setText(value);
 }

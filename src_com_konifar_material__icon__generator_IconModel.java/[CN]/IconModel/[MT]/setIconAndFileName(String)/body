@@ -6,6 +6,6 @@
  else {
     this.iconName=iconName;
     String[] fileString=this.iconName.split(File.separator);
-    if (fileString.length > 1)     this.fileName=getIconName(fileString[1]);
+    if (fileString.length > 1)     this.fileName=getIconName(fileString[1],displayColorName);
   }
 }

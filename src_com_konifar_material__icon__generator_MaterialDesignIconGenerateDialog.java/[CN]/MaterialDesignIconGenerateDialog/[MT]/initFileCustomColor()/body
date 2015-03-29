@@ -1,5 +1,5 @@
 {
-  textFieldCustomColor.getDocument().addDocumentListener(new DocumentListener(){
+  textFieldColorCode.getDocument().addDocumentListener(new DocumentListener(){
     @Override public void insertUpdate(    DocumentEvent event){
       setText();
     }
@@ -11,19 +11,19 @@
     }
     private void setText(){
       if (model != null) {
-        if (StringUtils.isEmpty(textFieldCustomColor.getText())) {
-          model.setCustomColor(null);
+        if (StringUtils.isEmpty(textFieldColorCode.getText())) {
+          model.setColorCode(null);
           showIconPreview();
           comboBoxColor.setSelectedItem("");
           return;
         }
         try {
-          Color.decode(textFieldCustomColor.getText());
-          model.setCustomColor(textFieldCustomColor.getText());
+          Color.decode(textFieldColorCode.getText());
+          model.setColorCode(textFieldColorCode.getText());
           showIconPreview();
         }
  catch (        NumberFormatException e) {
-          model.setCustomColor(null);
+          model.setColorCode(null);
           comboBoxColor.setSelectedItem("");
           showIconPreview();
         }

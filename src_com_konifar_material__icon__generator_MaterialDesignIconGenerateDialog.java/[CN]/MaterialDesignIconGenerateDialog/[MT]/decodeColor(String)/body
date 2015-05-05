@@ -1,0 +1,7 @@
+{
+  long colorBytes=Long.decode(argbColor);
+  if (argbColor.length() < 8) {
+    colorBytes|=0xFF << 24;
+  }
+  return new Color((int)(colorBytes >> 16) & 0xFF,(int)(colorBytes >> 8) & 0xFF,(int)colorBytes & 0xFF,(int)(colorBytes >> 24) & 0xFF);
+}

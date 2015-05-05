@@ -2,7 +2,7 @@
   Color color=null;
   if (model.getColorCode() != null) {
     String colorString=model.getColorCode();
-    color=Color.decode(colorString);
+    color=decodeColor(colorString);
   }
   if (color == null)   return image;
   int width=image.getWidth();
@@ -16,7 +16,7 @@
       pixels[0]=color.getRed();
       pixels[1]=color.getGreen();
       pixels[2]=color.getBlue();
-      pixels[3]=originalColor.getAlpha();
+      pixels[3]=combineAlpha(originalColor.getAlpha(),color.getAlpha());
       raster.setPixel(xx,yy,pixels);
     }
   }

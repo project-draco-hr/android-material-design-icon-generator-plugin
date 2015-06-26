@@ -1,0 +1,23 @@
+{
+  label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+  label.addMouseListener(new MouseAdapter(){
+    public void mouseClicked(    MouseEvent event){
+      if (event.getClickCount() > 0) {
+        if (Desktop.isDesktopSupported()) {
+          Desktop desktop=Desktop.getDesktop();
+          try {
+            URI uri=new URI(url);
+            desktop.browse(uri);
+          }
+ catch (          IOException e) {
+            e.printStackTrace();
+          }
+catch (          URISyntaxException e) {
+            e.printStackTrace();
+          }
+        }
+      }
+    }
+  }
+);
+}

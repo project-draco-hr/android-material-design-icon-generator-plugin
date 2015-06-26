@@ -1,0 +1,10 @@
+{
+  try {
+    InputStream is=getClass().getResourceAsStream(originalPath);
+    BufferedImage img=generateColoredIcon(ImageIO.read(is));
+    ImageIO.write(img,"png",destFile);
+  }
+ catch (  IOException ex) {
+    ex.printStackTrace();
+  }
+}

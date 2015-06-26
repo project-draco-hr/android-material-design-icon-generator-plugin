@@ -1,0 +1,3 @@
+{
+  return ((JTextField)this.getEditor().getEditorComponent()).getText();
+}

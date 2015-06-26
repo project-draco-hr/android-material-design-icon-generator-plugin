@@ -1,0 +1,4 @@
+{
+  MaterialDesignIconGenerateDialog dialog=new MaterialDesignIconGenerateDialog(getEventProject(event));
+  dialog.show();
+}

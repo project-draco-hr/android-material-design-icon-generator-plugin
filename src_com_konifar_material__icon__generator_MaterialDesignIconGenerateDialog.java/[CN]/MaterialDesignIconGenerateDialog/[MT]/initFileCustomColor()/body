@@ -1,0 +1,34 @@
+{
+  textFieldColorCode.getDocument().addDocumentListener(new DocumentListener(){
+    @Override public void insertUpdate(    DocumentEvent event){
+      setText();
+    }
+    @Override public void removeUpdate(    DocumentEvent event){
+      setText();
+    }
+    @Override public void changedUpdate(    DocumentEvent event){
+      setText();
+    }
+    private void setText(){
+      if (model != null) {
+        if (StringUtils.isEmpty(textFieldColorCode.getText())) {
+          model.setColorCode(null);
+          showIconPreview();
+          comboBoxColor.setSelectedItem("");
+          return;
+        }
+        try {
+          Color.decode(textFieldColorCode.getText());
+          model.setColorCode(textFieldColorCode.getText());
+          showIconPreview();
+        }
+ catch (        NumberFormatException e) {
+          model.setColorCode(null);
+          comboBoxColor.setSelectedItem("");
+          showIconPreview();
+        }
+      }
+    }
+  }
+);
+}

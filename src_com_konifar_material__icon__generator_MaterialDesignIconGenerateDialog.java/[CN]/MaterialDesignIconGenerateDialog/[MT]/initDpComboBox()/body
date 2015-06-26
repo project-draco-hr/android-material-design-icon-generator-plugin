@@ -1,0 +1,20 @@
+{
+  comboBoxDp.addActionListener(new ActionListener(){
+    @Override public void actionPerformed(    ActionEvent event){
+      model.setDpAndFileName((String)comboBoxDp.getSelectedItem());
+      textFieldFileName.setText(model.getFileName());
+      showIconPreview();
+    }
+  }
+);
+  comboBoxDp.getAccessibleContext().addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent event){
+      if (AccessibleContext.ACCESSIBLE_STATE_PROPERTY.equals(event.getPropertyName()) && AccessibleState.FOCUSED.equals(event.getNewValue()) && comboBoxDp.getAccessibleContext().getAccessibleChild(0) instanceof ComboPopup) {
+        ComboPopup popup=(ComboPopup)comboBoxDp.getAccessibleContext().getAccessibleChild(0);
+        JList list=popup.getList();
+        comboBoxDp.setSelectedItem(String.valueOf(list.getSelectedValue()));
+      }
+    }
+  }
+);
+}

@@ -1,0 +1,16 @@
+{
+  List<String> filterList=new ArrayList<String>();
+  for (  String text : comboBoxList) {
+    if (text.toLowerCase().contains(inputText.toLowerCase())) {
+      filterList.add(text);
+    }
+  }
+  if (!filterList.isEmpty()) {
+    setModel(new DefaultComboBoxModel(filterList.toArray()));
+    setSelectedItem(inputText);
+    showPopup();
+  }
+ else {
+    hidePopup();
+  }
+}

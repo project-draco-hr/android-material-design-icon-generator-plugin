@@ -1,0 +1,12 @@
+{
+  if (iconName != null) {
+    StringBuilder sb=new StringBuilder();
+    sb.append(PATH_ICONS);
+    String[] fileString=iconName.split("/");
+    sb.append(getLocalDrawabaleIconPath(getIconName(fileString[1]),size));
+    return sb.toString();
+  }
+ else {
+    return "";
+  }
+}

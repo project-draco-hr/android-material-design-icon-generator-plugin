@@ -1,0 +1,13 @@
+{
+  if (model == null)   return;
+  if (!isConfirmed())   return;
+  if (alreadyFileExists()) {
+    final int option=JOptionPane.showConfirmDialog(panelMain,"File already exists, overwrite this ?","File exists",JOptionPane.YES_NO_OPTION,JOptionPane.PLAIN_MESSAGE,new ImageIcon(getClass().getResource(ICON_WARNING)));
+    if (option == JOptionPane.YES_OPTION) {
+      create();
+    }
+  }
+ else {
+    create();
+  }
+}

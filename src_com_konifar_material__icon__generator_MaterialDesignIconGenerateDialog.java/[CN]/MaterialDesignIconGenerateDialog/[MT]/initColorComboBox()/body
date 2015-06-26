@@ -1,0 +1,43 @@
+{
+  colorPaletteMap=new HashMap<>();
+  Document doc;
+  try {
+    doc=JDOMUtil.loadDocument(getClass().getResourceAsStream(COLOR_PALETTE_COMBOBOX_XML));
+    List<Element> elements=doc.getRootElement().getChildren();
+    for (    org.jdom.Element element : elements) {
+      String key=element.getAttributeValue("id");
+      colorPaletteMap.put(key,element.getText());
+      comboBoxColor.addItem(key);
+    }
+  }
+ catch (  JDOMException e) {
+    e.printStackTrace();
+  }
+catch (  IOException e) {
+    e.printStackTrace();
+  }
+  comboBoxColor.addActionListener(new ActionListener(){
+    @Override public void actionPerformed(    ActionEvent event){
+      if (model != null) {
+        model.setDisplayColorName((String)comboBoxColor.getSelectedItem());
+        String value=colorPaletteMap.get(comboBoxColor.getSelectedItem());
+        textFieldColorCode.setText(value);
+        textFieldFileName.setText(model.getFileName());
+      }
+    }
+  }
+);
+  comboBoxColor.getAccessibleContext().addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent event){
+      if (AccessibleContext.ACCESSIBLE_STATE_PROPERTY.equals(event.getPropertyName()) && AccessibleState.FOCUSED.equals(event.getNewValue()) && comboBoxColor.getAccessibleContext().getAccessibleChild(0) instanceof ComboPopup) {
+        ComboPopup popup=(ComboPopup)comboBoxColor.getAccessibleContext().getAccessibleChild(0);
+        JList list=popup.getList();
+        comboBoxColor.setSelectedItem(String.valueOf(list.getSelectedValue()));
+      }
+    }
+  }
+);
+  comboBoxColor.setSelectedIndex(0);
+  String value=colorPaletteMap.get(comboBoxColor.getSelectedItem());
+  textFieldColorCode.setText(value);
+}

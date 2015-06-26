@@ -1,0 +1,3 @@
+{
+  return getIconName(shortName,WHITE);
+}

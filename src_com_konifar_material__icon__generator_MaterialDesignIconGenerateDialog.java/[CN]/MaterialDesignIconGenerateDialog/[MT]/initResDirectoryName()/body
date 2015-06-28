@@ -1,5 +1,12 @@
 {
   resDirectoryName.setText(DEFAULT_RES_DIR);
+  List<AndroidFacet> facets=AndroidUtils.getApplicationFacets(project);
+  if (facets.size() >= 1) {
+    List<VirtualFile> allResourceDirectories=facets.get(0).getAllResourceDirectories();
+    if (allResourceDirectories.size() >= 1) {
+      resDirectoryName.setText(allResourceDirectories.get(0).getCanonicalPath());
+    }
+  }
   resDirectoryName.addBrowseFolderListener(new TextBrowseFolderListener(new FileChooserDescriptor(false,true,false,false,false,false),project));
   resDirectoryName.getTextField().getDocument().addDocumentListener(new DocumentListener(){
     @Override public void insertUpdate(    DocumentEvent event){

@@ -1,9 +1,3 @@
 {
-  if (resDir.startsWith(project.getBasePath())) {
-    return resDir;
-  }
-  StringBuilder sb=new StringBuilder();
-  sb.append(project.getBasePath());
-  sb.append(resDir);
-  return sb.toString();
+  return resDir;
 }

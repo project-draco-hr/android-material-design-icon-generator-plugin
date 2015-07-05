@@ -1,5 +1,5 @@
 {
   this.displayColorName=displayColorName;
-  String[] fileString=iconName.split(File.separator);
+  String[] fileString=iconName.split("/");
   if (fileString.length > 1)   this.fileName=getIconName(fileString[1],displayColorName);
 }

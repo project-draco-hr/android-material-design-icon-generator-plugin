@@ -1,9 +1,8 @@
 {
-  colorPaletteMap=new HashMap<String,String>();
+  colorPaletteMap=new HashMap<>();
   Document doc;
   try {
-    File templateFile=getLocalFile(COLOR_PALETTE_COMBOBOX_XML);
-    doc=JDOMUtil.loadDocument(templateFile);
+    doc=JDOMUtil.loadDocument(getClass().getResourceAsStream(COLOR_PALETTE_COMBOBOX_XML));
     List<Element> elements=doc.getRootElement().getChildren();
     for (    org.jdom.Element element : elements) {
       String key=element.getAttributeValue("id");
@@ -21,7 +20,7 @@ catch (  IOException e) {
     @Override public void actionPerformed(    ActionEvent event){
       if (model != null) {
         model.setDisplayColorName((String)comboBoxColor.getSelectedItem());
-        String value=colorPaletteMap.get((String)comboBoxColor.getSelectedItem());
+        String value=colorPaletteMap.get(comboBoxColor.getSelectedItem());
         textFieldColorCode.setText(value);
         textFieldFileName.setText(model.getFileName());
       }
@@ -39,6 +38,6 @@ catch (  IOException e) {
   }
 );
   comboBoxColor.setSelectedIndex(0);
-  String value=colorPaletteMap.get((String)comboBoxColor.getSelectedItem());
+  String value=colorPaletteMap.get(comboBoxColor.getSelectedItem());
   textFieldColorCode.setText(value);
 }

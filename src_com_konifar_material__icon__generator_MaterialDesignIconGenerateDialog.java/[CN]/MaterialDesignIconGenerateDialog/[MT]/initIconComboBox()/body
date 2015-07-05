@@ -1,8 +1,7 @@
 {
   Document doc;
   try {
-    File templateFile=getLocalFile(FILE_ICON_COMBOBOX_XML);
-    doc=JDOMUtil.loadDocument(templateFile);
+    doc=JDOMUtil.loadDocument(getClass().getResourceAsStream(FILE_ICON_COMBOBOX_XML));
     List<Element> elements=doc.getRootElement().getChildren();
     for (    org.jdom.Element element : elements) {
       comboBoxIcon.addItem(element.getText());

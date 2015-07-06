@@ -1,5 +1,5 @@
 {
-  colorPaletteMap=new HashMap<>();
+  colorPaletteMap=new HashMap<String,String>();
   Document doc;
   try {
     doc=JDOMUtil.loadDocument(getClass().getResourceAsStream(COLOR_PALETTE_COMBOBOX_XML));

@@ -11,5 +11,8 @@
   checkBoxXhdpi.setEnabled(!shouldVectorSelected);
   checkBoxXxhdpi.setEnabled(!shouldVectorSelected);
   checkBoxXxxhdpi.setEnabled(!shouldVectorSelected);
-  if (model != null)   model.setVectorType(shouldVectorSelected);
+  if (model != null) {
+    model.setVectorTypeAndFileName(shouldVectorSelected);
+    textFieldFileName.setText(model.getFileName());
+  }
 }

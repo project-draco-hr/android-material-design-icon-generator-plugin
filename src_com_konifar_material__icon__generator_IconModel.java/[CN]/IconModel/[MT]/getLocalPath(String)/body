@@ -3,7 +3,8 @@
     StringBuilder sb=new StringBuilder();
     sb.append(PATH_ICONS);
     String[] fileString=iconName.split("/");
-    sb.append(getLocalDrawabaleIconPath(getIconName(fileString[1]),size));
+    String iconName=isVectorType ? getVectorIconName(fileString[1]) : getImageIconName(fileString[1]);
+    sb.append(getLocalDrawabaleIconPath(iconName,size));
     return sb.toString();
   }
  else {

@@ -1,10 +1,4 @@
 {
-  StringBuilder sb=new StringBuilder();
-  sb.append(shortName);
-  sb.append(UNDERBAR);
-  sb.append(colorName);
-  sb.append(UNDERBAR);
-  sb.append(dp);
-  sb.append(PNG_SUFFIX);
-  return sb.toString();
+  String suffix=isVectorType ? XML_SUFFIX : PNG_SUFFIX;
+  return getIconName(shortName,colorName,this.dp,suffix);
 }

@@ -1,0 +1,13 @@
+{
+  File copyFile=new File(model.getVectorCopyPath(project,vectorDrawableDir));
+  String path=model.getVectorLocalPath();
+  try {
+    new File(copyFile.getParent()).mkdirs();
+    copyVectorFile(path,copyFile);
+    return true;
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+    throw new IllegalStateException(e);
+  }
+}

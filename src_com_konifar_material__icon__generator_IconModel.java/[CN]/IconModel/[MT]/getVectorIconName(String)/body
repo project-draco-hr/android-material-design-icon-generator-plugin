@@ -1,0 +1,3 @@
+{
+  return getIconName(shortName,BLACK,VECTOR_DEFAULT_DP,XML_SUFFIX);
+}

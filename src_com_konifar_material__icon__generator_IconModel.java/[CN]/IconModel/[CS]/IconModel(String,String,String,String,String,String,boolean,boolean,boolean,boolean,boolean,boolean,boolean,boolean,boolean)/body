@@ -10,4 +10,8 @@
   this.xhdpi=xhdpi;
   this.xxhdpi=xxhdpi;
   this.xxxhdpi=xxxhdpi;
+  this.isVectorType=isVectorType;
+  this.drawable=drawable;
+  this.drawableV21=drawableV21;
+  this.drawableNoDpi=drawableNoDpi;
 }

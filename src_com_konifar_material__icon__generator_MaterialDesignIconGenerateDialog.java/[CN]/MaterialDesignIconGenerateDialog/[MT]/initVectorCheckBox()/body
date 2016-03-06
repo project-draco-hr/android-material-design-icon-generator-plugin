@@ -1,0 +1,20 @@
+{
+  checkBoxDrawable.addItemListener(new ItemListener(){
+    @Override public void itemStateChanged(    ItemEvent event){
+      if (model != null)       model.setDrawable(checkBoxDrawable.isSelected());
+    }
+  }
+);
+  checkBoxDrawableV21.addItemListener(new ItemListener(){
+    @Override public void itemStateChanged(    ItemEvent event){
+      if (model != null)       model.setDrawableV21(checkBoxDrawableV21.isSelected());
+    }
+  }
+);
+  checkBoxDrawableNoDpi.addItemListener(new ItemListener(){
+    @Override public void itemStateChanged(    ItemEvent event){
+      if (model != null)       model.setDrawableNoDpi(checkBoxDrawableNoDpi.isSelected());
+    }
+  }
+);
+}

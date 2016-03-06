@@ -1,0 +1,18 @@
+{
+  radioVector.setSelected(shouldVectorSelected);
+  radioImage.setSelected(!shouldVectorSelected);
+  panelVector.setEnabled(shouldVectorSelected);
+  panelImageSize.setEnabled(!shouldVectorSelected);
+  checkBoxDrawable.setEnabled(shouldVectorSelected);
+  checkBoxDrawableV21.setEnabled(shouldVectorSelected);
+  checkBoxDrawableNoDpi.setEnabled(shouldVectorSelected);
+  checkBoxHdpi.setEnabled(!shouldVectorSelected);
+  checkBoxMdpi.setEnabled(!shouldVectorSelected);
+  checkBoxXhdpi.setEnabled(!shouldVectorSelected);
+  checkBoxXxhdpi.setEnabled(!shouldVectorSelected);
+  checkBoxXxxhdpi.setEnabled(!shouldVectorSelected);
+  if (model != null) {
+    model.setVectorTypeAndFileName(shouldVectorSelected);
+    textFieldFileName.setText(model.getFileName());
+  }
+}

@@ -1,0 +1,8 @@
+{
+  if (dp != null) {
+    return dp.replace(DP,"") + ".0";
+  }
+ else {
+    return null;
+  }
+}

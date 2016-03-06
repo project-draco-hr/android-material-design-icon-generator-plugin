@@ -1,0 +1,13 @@
+{
+  if (iconName != null) {
+    StringBuilder sb=new StringBuilder();
+    sb.append(PATH_ICONS);
+    String[] fileString=iconName.split("/");
+    String iconName=isVectorType && !shouldForcePng ? getVectorIconName(fileString[1]) : getImageIconName(fileString[1]);
+    sb.append(getLocalDrawabaleIconPath(iconName,size));
+    return sb.toString();
+  }
+ else {
+    return "";
+  }
+}

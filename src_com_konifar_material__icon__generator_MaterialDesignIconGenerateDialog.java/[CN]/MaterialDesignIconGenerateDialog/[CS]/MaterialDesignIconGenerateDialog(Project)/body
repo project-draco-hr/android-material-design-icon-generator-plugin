@@ -8,7 +8,9 @@
   initDpComboBox();
   initFileName();
   initResDirectoryName();
+  initImageTypeRadioButton();
   initSizeCheckBox();
+  initVectorCheckBox();
   initFileCustomColor();
   initLabelLink(labelOverview,URL_OVERVIEW);
   initLabelLink(labelRepository,URL_REPOSITORY);

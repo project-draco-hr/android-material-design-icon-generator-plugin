@@ -8,6 +8,7 @@
   initDpComboBox();
   initFileName();
   initResDirectoryName();
+  initImageTypeRadioButton();
   initSizeCheckBox();
   initFileCustomColor();
   initLabelLink(labelOverview,URL_OVERVIEW);

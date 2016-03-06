@@ -1,0 +1,27 @@
+{
+  radioImage.addItemListener(new ItemListener(){
+    @Override public void itemStateChanged(    ItemEvent itemEvent){
+      toggleImageType(!radioImage.isSelected());
+    }
+  }
+);
+  radioVector.addItemListener(new ItemListener(){
+    @Override public void itemStateChanged(    ItemEvent itemEvent){
+      toggleImageType(radioVector.isSelected());
+    }
+  }
+);
+  panelImageSize.addMouseListener(new MouseClickListener(){
+    @Override public void mouseClicked(    MouseEvent mouseEvent){
+      toggleImageType(radioImage.isSelected());
+    }
+  }
+);
+  panelVector.addMouseListener(new MouseClickListener(){
+    @Override public void mouseClicked(    MouseEvent mouseEvent){
+      toggleImageType(!radioVector.isSelected());
+    }
+  }
+);
+  radioImage.setSelected(true);
+}

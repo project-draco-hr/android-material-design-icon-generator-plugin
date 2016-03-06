@@ -23,6 +23,8 @@
     }
     TransformerFactory transformerFactory=TransformerFactory.newInstance();
     Transformer transformer=transformerFactory.newTransformer();
+    transformer.setOutputProperty(OutputKeys.INDENT,"yes");
+    transformer.setOutputProperty(OutputPropertiesFactory.S_KEY_INDENT_AMOUNT,"4");
     StreamResult result=new StreamResult(destFile);
     transformer.transform(new DOMSource(doc),result);
   }

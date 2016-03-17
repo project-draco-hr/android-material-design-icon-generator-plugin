@@ -1,8 +1,3 @@
 {
-  if (dp != null) {
-    return dp.replace(DP,"") + ".0";
-  }
- else {
-    return null;
-  }
+  return VECTOR_VIEWPORT_SIZE;
 }

@@ -12,4 +12,3 @@ boolean xxxhdpi
 boolean isVectorType
 boolean drawable
 boolean drawableV21
-boolean drawableNoDpi

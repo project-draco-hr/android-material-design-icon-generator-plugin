@@ -11,10 +11,4 @@
     }
   }
 );
-  checkBoxDrawableNoDpi.addItemListener(new ItemListener(){
-    @Override public void itemStateChanged(    ItemEvent event){
-      if (model != null)       model.setDrawableNoDpi(checkBoxDrawableNoDpi.isSelected());
-    }
-  }
-);
 }

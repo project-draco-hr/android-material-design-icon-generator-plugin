@@ -13,5 +13,4 @@
   this.isVectorType=isVectorType;
   this.drawable=drawable;
   this.drawableV21=drawableV21;
-  this.drawableNoDpi=drawableNoDpi;
 }

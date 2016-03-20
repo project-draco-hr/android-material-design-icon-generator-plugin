@@ -5,7 +5,6 @@
   panelImageSize.setEnabled(!shouldVectorSelected);
   checkBoxDrawable.setEnabled(shouldVectorSelected);
   checkBoxDrawableV21.setEnabled(shouldVectorSelected);
-  checkBoxDrawableNoDpi.setEnabled(shouldVectorSelected);
   checkBoxHdpi.setEnabled(!shouldVectorSelected);
   checkBoxMdpi.setEnabled(!shouldVectorSelected);
   checkBoxXhdpi.setEnabled(!shouldVectorSelected);

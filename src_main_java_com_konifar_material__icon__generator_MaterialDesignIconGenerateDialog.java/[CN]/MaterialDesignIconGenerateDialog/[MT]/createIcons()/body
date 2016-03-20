@@ -2,7 +2,6 @@
   if (model.isVectorType()) {
     if (model.isDrawable())     createVectorIcon(checkBoxDrawable.getText());
     if (model.isDrawableV21())     createVectorIcon(checkBoxDrawableV21.getText());
-    if (model.isDrawableNoDpi())     createVectorIcon(checkBoxDrawableNoDpi.getText());
   }
  else {
     if (model.isMdpi())     createImageIcon(checkBoxMdpi.getText());

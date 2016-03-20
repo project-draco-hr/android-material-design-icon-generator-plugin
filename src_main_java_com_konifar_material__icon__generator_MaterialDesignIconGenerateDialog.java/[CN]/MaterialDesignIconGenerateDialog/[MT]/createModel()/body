@@ -13,6 +13,5 @@
   final boolean isVectorType=radioVector.isSelected();
   final boolean drawable=checkBoxDrawable.isSelected();
   final boolean drawableV21=checkBoxDrawableV21.isSelected();
-  final boolean drawableNoDpi=checkBoxDrawableNoDpi.isSelected();
-  return new IconModel(iconName,displayColorName,colorCode,dp,fileName,resDir,mdpi,hdpi,xdpi,xxdpi,xxxdpi,isVectorType,drawable,drawableV21,drawableNoDpi);
+  return new IconModel(iconName,displayColorName,colorCode,dp,fileName,resDir,mdpi,hdpi,xdpi,xxdpi,xxxdpi,isVectorType,drawable,drawableV21);
 }

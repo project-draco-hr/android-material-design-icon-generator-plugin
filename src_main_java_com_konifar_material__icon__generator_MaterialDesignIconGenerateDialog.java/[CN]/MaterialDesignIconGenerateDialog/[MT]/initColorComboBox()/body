@@ -27,16 +27,6 @@ catch (  IOException e) {
     }
   }
 );
-  comboBoxColor.getAccessibleContext().addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent event){
-      if (AccessibleContext.ACCESSIBLE_STATE_PROPERTY.equals(event.getPropertyName()) && AccessibleState.FOCUSED.equals(event.getNewValue()) && comboBoxColor.getAccessibleContext().getAccessibleChild(0) instanceof ComboPopup) {
-        ComboPopup popup=(ComboPopup)comboBoxColor.getAccessibleContext().getAccessibleChild(0);
-        JList list=popup.getList();
-        comboBoxColor.setSelectedItem(String.valueOf(list.getSelectedValue()));
-      }
-    }
-  }
-);
   comboBoxColor.setSelectedIndex(0);
   String value=colorPaletteMap.get(comboBoxColor.getSelectedItem());
   textFieldColorCode.setText(value);

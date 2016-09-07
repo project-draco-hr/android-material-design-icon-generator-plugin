@@ -1,4 +1,5 @@
 {
   createIcons();
   JOptionPane.showConfirmDialog(panelMain,"Icon created successfully.","Material design icon created",JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE,new ImageIcon(getClass().getResource(ICON_DONE)));
+  LocalFileSystem.getInstance().refresh(true);
 }

@@ -16,6 +16,16 @@
 catch (  IOException e) {
     e.printStackTrace();
   }
+  comboBoxColor.getAccessibleContext().addPropertyChangeListener(new PropertyChangeListener(){
+    public void propertyChange(    PropertyChangeEvent event){
+      if (AccessibleContext.ACCESSIBLE_STATE_PROPERTY.equals(event.getPropertyName()) && AccessibleState.FOCUSED.equals(event.getNewValue()) && comboBoxColor.getAccessibleContext().getAccessibleChild(0) instanceof ComboPopup) {
+        ComboPopup popup=(ComboPopup)comboBoxColor.getAccessibleContext().getAccessibleChild(0);
+        JList list=popup.getList();
+        comboBoxColor.setSelectedItem(String.valueOf(list.getSelectedValue()));
+      }
+    }
+  }
+);
   comboBoxColor.addActionListener(new ActionListener(){
     @Override public void actionPerformed(    ActionEvent event){
       if (model != null) {
@@ -23,16 +33,6 @@ catch (  IOException e) {
         String value=colorPaletteMap.get(comboBoxColor.getSelectedItem());
         textFieldColorCode.setText(value);
         textFieldFileName.setText(model.getFileName());
-      }
-    }
-  }
-);
-  comboBoxColor.getAccessibleContext().addPropertyChangeListener(new PropertyChangeListener(){
-    public void propertyChange(    PropertyChangeEvent event){
-      if (AccessibleContext.ACCESSIBLE_STATE_PROPERTY.equals(event.getPropertyName()) && AccessibleState.FOCUSED.equals(event.getNewValue()) && comboBoxColor.getAccessibleContext().getAccessibleChild(0) instanceof ComboPopup) {
-        ComboPopup popup=(ComboPopup)comboBoxColor.getAccessibleContext().getAccessibleChild(0);
-        JList list=popup.getList();
-        comboBoxColor.setSelectedItem(String.valueOf(list.getSelectedValue()));
       }
     }
   }

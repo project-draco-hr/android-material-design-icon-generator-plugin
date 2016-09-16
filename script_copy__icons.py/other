@@ -12,7 +12,6 @@ drawables = ['anydpi-v21', 'hdpi', 'mdpi', 'xhdpi', 'xxhdpi', 'xxxhdpi']
 category_dirs = [f for f in os.listdir(icons_root_dir) if os.path.isdir(join(icons_root_dir, f))]
 category_dirs.remove('iconfont')
 category_dirs.remove('sprites')
-category_dirs.remove('www')
 for category in category_dirs:
     for drawable in drawables:
         icons_dir = ((((icons_root_dir + '/') + category) + '/drawable-') + drawable)
